@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>DOM</title>
+    <style>
+        .nav{
+            transition: all .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="primary" id="nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+                aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor04">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <form>
+            <h1 class="mt-4 text-center">Create New Product</h1>
+            <fieldset>
+                <div class="row">
+                    <div class="col">
+                        <label for="nameProductInput" class="form-label mt-4">Name Product</label>
+                        <input type="email" class="form-control" id="nameProductInput" aria-describedby="emailHelp"
+                            placeholder="Enter name product">
+                    </div>
+                    <div class="col">
+                        <label for="descriptionInput" class="form-label mt-4">Description</label>
+                        <input type="text" class="form-control" id="descInput" placeholder="Enter description">
+                    </div>
+                    <div class="col-6">
+                        <label for="priceInput" class="form-label mt-4">Price</label>
+                        <input type="number" class="form-control" id="priceInput" placeholder="Enter price">
+                    </div>
+                </div>
+
+                <button id="createBtn" type="button" class="btn btn-primary mt-4">Create</button>
+                <button id="delete-btn" type="button" class="btn btn-danger mt-4">Delete all</button>
+                <button id="theme-btn" type="button" class="btn btn-primary mt-4">My Button</button>
+            </fieldset>
+        </form>
+
+        <h2 class="text-center">List Product</h2>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name product</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr class="table-dark">
+                    <th scope="row">1</th>
+                    <td>Nissan Leaf</td>
+                    <td>Some text</td>
+                    <td>500 grn</td>
+                </tr>
+                <tr class="table-dark">
+                    <th scope="row">2</th>
+                    <td>Tesla</td>
+                    <td>Some text</td>
+                    <td>1000 grn</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+<script src="base.js"></script>
+
+
+</body>
+
+</html>
