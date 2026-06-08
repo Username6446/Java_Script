@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+        <title>Login Form</title>
+    </head>
+    <body>
+        <div class="form-wrapper">
+            <form onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="login">Your login:</label>
+                    <input id="login" name="login" type="text" required />
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Your password:</label>
+                    <input id="password" name="password" type="password" required />
+                </div>
+                
+                <div class="checkbox-group">
+                    <label for="rememberMe">Remember me</label>
+                    <input id="rememberMe" name="rememberMe" type="checkbox" />
+                </div>
+                
+                <div style="text-align: center; margin-top: 16px;">
+                    <input class="submit-btn" type="submit" value="Sign In">
+                </div>
+                
+                <div class="forgot-link">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </form>
+        </div>
+
+        <div id="resultMessage" style="text-align: center; margin-top: 20px; font-size: 1.2em; font-weight: bold; color: #333;"></div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

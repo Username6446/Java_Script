@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+
+        <div style="
+            width: 100vw; 
+            height: 100vh; 
+            background-color: #faf0e6; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center;   
+            gap: 20px;             
+        ">
+            <!-- ex1 -->
+
+            <div style="
+                width: 40%; 
+                height: 30vh; 
+                background-color: #978b80; 
+                text-align: center; 
+                display: flex; 
+                flex-direction: column; 
+                justify-content: center; 
+                align-items: center;
+            ">
+                <h1>Random Number</h1>
+                <h1 id="randomNumber" style="font-weight: bold;">0</h1>
+                <button onclick="generateRandomNumber()">Generate Random Number</button>
+                <script src="script.js"></script>
+            </div>
+
+            <!-- ex2 -->
+            <div>
+                <h1 id="coordinates">X = 0, Y = 0</h1>
+            </div>
+
+            <!-- ex3 -->
+            <div style="
+                width: 40%;">
+                <button onclick="HideShow()">Hide / Show</button>
+                <p id="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam ullam alias blanditiis atque similique eos fuga, ex eveniet aperiam distinctio. Rem voluptas corrupti explicabo quae dolorem praesentium, impedit unde officiis.<20></20></p>
+            </div>
+
+
+            <!-- ex4 -->
+             <div>
+                <div></div>
+             </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

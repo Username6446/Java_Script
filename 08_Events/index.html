@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Events</title>
+    </head>
+    <body>
+        <h1 id="inputText"></h1>
+        <div style="text-align: end;">
+            <h1 id="windowSize"></h1>
+        </div>
+        <div>
+            <button onclick="clickButton(event)">onClick html</button>
+            <button id="btn2">onClick js</button>
+            <button id="btn3">click event listener</button>
+        </div>
+
+        <!-- Квадрати з ефектами миші -->
+        <div style="display: flex; justify-content: center">
+            <div
+                onmouseenter="mouseEnter(event)"
+                onmouseleave="mouseLeave(event)"
+                style="
+                    margin: 16px;
+                    display: inline-block;
+                    width: 100px;
+                    height: 100px;
+                    background-color: #524848;
+                "
+            ></div>
+
+            <div
+                onmouseenter="mouseEnter(event)"
+                onmouseleave="mouseLeave(event)"
+                style="
+                    margin: 16px;
+                    display: inline-block;
+                    width: 100px;
+                    height: 100px;
+                    background-color: #524848;
+                "
+            ></div>
+        </div>
+
+        <!-- Коло для переміщення за курсором -->
+        <div
+            id="circle"
+            style="
+                display: inline-block;
+                border-radius: 50%;
+                background-color: #b7b92f;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+            "
+        ></div>
+
+        <!-- Випадковий колір для квадрату -->
+        <div
+            style="
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+                flex-direction: column;
+            "
+        >
+            <div
+                id="randomColorSquare"
+                style="
+                    display: inline-block;
+                    width: 250px;
+                    height: 250px;
+                    background-color: black;
+                "
+            ></div>
+            <button onclick="randomColor()" style="margin-top: 10px">
+                Random color
+            </button>
+        </div>
+
+        <!-- Квадрат що рухається -->
+        <div
+            id="parentDiv"
+            style="
+                width: 100%;
+                margin: auto;
+                height: 300px;
+                margin-top: 50px;
+                display: flex;
+                align-items: center;
+            "
+        >
+            <div
+                id="runner"
+                style="
+                    position: relative;
+                    display: inline-block;
+                    height: 200px;
+                    width: 200px;
+                    left: 0px;
+                    background-color: brown;
+                    transition: left 2s linear, transform 2s linear;
+                "
+            ></div>
+        </div>
+        <div style="text-align: center">
+            <button
+                onclick="moveSquare()"
+                style="
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    background-color: lightcoral;
+                    border: none;
+                    padding: 16px;
+                    border-radius: 10px;
+                "
+            >
+                Move square
+            </button>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html> 
