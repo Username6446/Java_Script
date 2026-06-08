@@ -17,3 +17,15 @@ function HideShow(event) {
         text.style.display = "none";
     }
 }
+
+function deleteCard(event) {
+    const button = event.target;
+    const headerContainer = button.parentElement;
+    const textElement = headerContainer.querySelector('h1');
+    const textContent = textElement.textContent;
+    const cardToDelete = headerContainer.closest('.card');
+
+    if (cardToDelete) {
+        cardToDelete.remove();
+    }
+}
