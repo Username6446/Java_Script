@@ -41,3 +41,51 @@ console.log(login.toLowerCase());
 let email = "    mail@gmail.com   ";
 console.log(`/${email}/`)
 console.log(`/${email.trim()}/`)
+
+
+
+function countSpaces(string) {
+    let count = 0;
+    for (let char of string) {
+        if (char === ' ') {
+            count++;
+        }
+    }
+    return count;
+}
+
+
+console.log(countSpaces("qw rty"))
+console.log("qwe rty".slice(0))
+
+function firstChar(string)
+{
+    return string[0].toUpperCase() + string.slice(1);
+}
+
+console.log(firstChar("wfq"))
+
+
+function countOfWords(string)
+{
+    return string.trim().split(" ").count();
+}
+console.log(firstChar("wfq уца а уцуац "))
+
+function abreviatura(string)
+{
+    let res = "";
+    let array = string.split(" ");
+    for (const el of array) {
+        res+=firstChar(el[0]);
+    }
+    return res;
+}
+
+console.log(abreviatura("cdsvd sdfsd sdf"));
+
+function isPalidrom(string)
+{
+    return string === string.split("").reverse().join("")?true:false;
+}
+console.log(isPalidrom("шалаш"))
