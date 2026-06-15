@@ -104,6 +104,12 @@ console.log(str.split(' - '));
 
 console.clear();
 
+
+
+// ------------------ HomeWork
+
+
+
 console.log("Create array with 20 random elements");
 
 var array = new Array(20);
@@ -147,3 +153,20 @@ if (hasDuplicates) {
 } else {
     console.log("All elements are unique.");
 }
+
+
+console.log(`Array - ${array}`)
+
+const newArray = array.slice(1, -1);
+
+console.log(`New Array - ${newArray}`)
+
+let num = 0;
+
+for (const element of array) {
+    if(element%2 === 0){
+        console.log(element);
+        num++;
+    }
+}
+console.log(`Num of Even elements: ${num}`);
