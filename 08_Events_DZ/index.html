@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="main" style=" 
+            height: 300vh; 
+            background-color: #faf0e6; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center;   
+            gap: 20px; 
+        ">
+        <!-- ex1 -->
+
+        <div style="
+                width: 40%; 
+                height: 30vh; 
+                background-color: #978b80; 
+                text-align: center; 
+                display: flex; 
+                flex-direction: column; 
+                justify-content: center; 
+                align-items: center;
+            ">
+            <h1>Random Number</h1>
+            <h1 id="randomNumber" style="font-weight: bold;">0</h1>
+            <button onclick="generateRandomNumber()">Generate Random Number</button>
+            <script src="script.js"></script>
+        </div>
+
+        <!-- ex2 -->
+        <div>
+            <h1 id="coordinates">X = 0, Y = 0</h1>
+        </div>
+
+        <!-- ex3 -->
+        <div style="
+                width: 40%;">
+            <button onclick="HideShow('text')">Hide / Show</button>
+            <p id="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam ullam alias blanditiis
+                atque similique eos fuga, ex eveniet aperiam distinctio. Rem voluptas corrupti explicabo quae
+                dolorem praesentium, impedit unde officiis.
+            </p>
+        </div>
+
+
+        <!-- ex4 -->
+        <div class="cards" style="
+                width: 80%; 
+                display: flex; 
+                flex-direction: column;
+            ">
+            <div class="card" style="padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h1>What is Lorem Ipsum? 1</h1>
+                    <button style="float: right; height: 30px;" onclick="deleteCard(event)">X [remove]</button>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum pariatur quas qui porro saepe
+                    temporibus quaerat, tempora inventore tempore quisquam id accusantium velit deserunt quidem
+                    natus. Recusandae veniam error ipsam?</p>
+                <hr>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h1>What is Lorem Ipsum? 2</h1>
+                    <button style="float: right; height: 30px;" onclick="deleteCard(event)">X [remove]</button>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum pariatur quas qui porro saepe
+                    temporibus quaerat, tempora inventore tempore quisquam id accusantium velit deserunt quidem
+                    natus. Recusandae veniam error ipsam?</p>
+                <hr>
+            </div>
+            <div class="card" style="padding: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h1>What is Lorem Ipsum? 3</h1>
+                    <button style="float: right; height: 30px;" onclick="deleteCard(event)">X [remove]</button>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum pariatur quas qui porro saepe
+                    temporibus quaerat, tempora inventore tempore quisquam id accusantium velit deserunt quidem
+                    natus. Recusandae veniam error ipsam?</p>
+                <hr>
+            </div>
+        </div>
+
+        <!-- ex2.1 -->
+        <div style="padding: 20px; width: 30%; text-align: center;">
+            <button id="btn" onclick="HideShowModal(true)">Open Modal</button>
+        </div>
+
+
+
+        <!-- ex2.2 -->
+        <div
+            style="width: 600px; height: 200px; align-items: center; text-align: center;display: flex; flex-direction: row;">
+            <div style="
+                        width: 600px; 
+                        height: 200px; 
+                        align-items: center; 
+                        border: 3px solid gray; 
+                        border-radius: 7%;
+                        display: flex; 
+                        flex-direction: row; 
+                        justify-content: space-around; margin-right: 20px;">
+                <div id="red"
+                    style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid grey; background-color: grey;">
+                </div>
+                <div id="yellow"
+                    style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid grey; background-color: grey;">
+                </div>
+                <div id="green"
+                    style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid grey; background-color: grey;">
+                </div>
+            </div>
+
+            <button onclick="Trafficlights()"
+                style="width: 140px; height: 200px; border-radius: 20px; border: 3px solid grey; box-shadow: 2px 4px 0px 0px #7d7d7d;">NEXT</button>
+        </div>
+
+        <!-- ex 2.3 -->
+        <div style="width: 800px; height: 200px; margin-top: 100px;">
+
+            <div style="
+                    height: 75px; 
+                    border: 3px solid gray; 
+                    border-radius: 10px; 
+                    margin-bottom: 10px; 
+                    overflow: hidden;">
+                <div id="ProgressBar" style="
+                        width: 0%; 
+                        height: 100%; 
+                        background-color: rgb(55, 210, 55); 
+                        transition: width 0.3s ease;
+                    "></div>
+                </div>
+
+            <button onclick="addPercent()"
+                style="width: 100%; padding: 10px;">
+                Add 5 Percent
+            </button>
+        </div>
+
+    </div>
+
+
+
+
+    <div id="modal" style="
+        display: none; 
+        position: fixed; 
+        top: 40%; left: 35%; 
+        width: 30%; height: 20%; 
+        justify-content: center; 
+        align-items: center;
+        
+    ">
+        <div style="background-color: #e1ffff; text-align: center; padding: 40px;">
+            <h3 style="margin-top: 0;">Hello from Modal Window!</h3>
+            <button onclick="HideShowModal(false)">Close</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
