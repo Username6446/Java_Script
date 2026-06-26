@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Weather Forecast</title>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand text-info fw-bold" href="#">My weather</a>
+            <form id="searchForm" class="d-flex ms-auto">
+                <input id="cityInput" class="form-control me-2" type="search" placeholder="Lviv">
+                <button id="searchBtn" class="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="bg-dark text-white container-fluid mb-4">
+        <div class="container-fluid px-4">
+            <ul class="nav nav-underline">
+                <li class="nav-item">
+                    <a id="tab-today" class="nav-link active link-light py-3 px-4 border-bottom border-3 border-info" href="#" style="cursor: pointer;">Today</a>
+                </li>
+                <li class="nav-item">
+                    <a id="tab-forecast" class="nav-link link-secondary py-3 px-4" href="#" style="cursor: pointer;">5-day forecast</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main-content" class="container-fluid px-4 mb-5">
+        
+        <div id="view-today">
+            <div class="card border-0 rounded-0 shadow-sm mb-4 p-4">
+                <div class="d-flex justify-content-between border-bottom pb-2 mb-4">
+                    <h5 class="text-info fw-bold mb-0 small">CURRENT WEATHER</h5>
+                    <span id="current-date" class="text-info fw-bold small">--.--.----</span>
+                </div>
+
+                <div class="row align-items-center text-center g-3">
+                    <div class="col-md-4">
+                        <div id="current-icon" class="mb-2"></div>
+                        <h5 id="current-desc" class="text-secondary fw-normal text-capitalize">Loading...</h5>
+                    </div>
+                    <div class="col-md-4">
+                        <div id="current-temp" class="display-2 fw-normal">--°C</div>
+                        <div id="current-feels" class="text-muted small">Real Feel --°</div>
+                    </div>
+                    <div class="col-md-4 text-start ps-md-5">
+                        <div class="mb-1 text-dark"><span class="text-muted">Sunrise:</span> <span id="current-sunrise">--:--</span></div>
+                        <div class="mb-1 text-dark"><span class="text-muted">Sunset:</span> <span id="current-sunset">--:--</span></div>
+                        <div class="text-dark"><span class="text-muted">Duration:</span> <span id="current-duration">--:-- hr</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 rounded-0 shadow-sm p-4">
+                <div class="border-bottom pb-2 mb-4">
+                    <h5 class="text-info fw-bold mb-0 small">HOURLY</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-borderless text-center align-middle mb-0">
+                        <thead>
+                            <tr id="today-row-time" class="fw-bold border-bottom">
+                                <td class="text-start text-uppercase text-dark">Today</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="today-row-icon"><td></td></tr>
+                            <tr id="today-row-desc" class="small"><td class="text-start text-muted">Forecast</td></tr>
+                            <tr id="today-row-temp" class="fw-normal"><td class="text-start text-muted small">Temp (°C)</td></tr>
+                            <tr id="today-row-feels" class="small"><td class="text-start text-muted">RealFeel</td></tr>
+                            <tr id="today-row-wind" class="small"><td class="text-start text-muted">Wind (km/h)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-forecast" class="d-none">
+            <div class="card border-0 rounded-0 shadow-sm mb-4 bg-light">
+                <div class="row g-0 text-center">
+                    <div id="day0-col" class="col border-end p-4 bg-white shadow-sm" style="z-index: 1; cursor: pointer;">
+                        <div id="day0-name" class="text-info fw-bold small text-uppercase">--</div>
+                        <div id="day0-date" class="text-muted small mb-3">--</div>
+                        <div id="day0-icon" class="mb-2"></div>
+                        <div id="day0-temp" class="fs-2">--°C</div>
+                        <div id="day0-desc" class="text-muted small text-capitalize">Loading...</div>
+                    </div>
+                    <div id="day1-col" class="col border-end p-4" style="cursor: pointer;">
+                        <div id="day1-name" class="text-info fw-bold small text-uppercase">--</div>
+                        <div id="day1-date" class="text-muted small mb-3">--</div>
+                        <div id="day1-icon" class="mb-2"></div>
+                        <div id="day1-temp" class="fs-2">--°C</div>
+                        <div id="day1-desc" class="text-muted small text-capitalize">--</div>
+                    </div>
+                    <div id="day2-col" class="col border-end p-4" style="cursor: pointer;">
+                        <div id="day2-name" class="text-info fw-bold small text-uppercase">--</div>
+                        <div id="day2-date" class="text-muted small mb-3">--</div>
+                        <div id="day2-icon" class="mb-2"></div>
+                        <div id="day2-temp" class="fs-2">--°C</div>
+                        <div id="day2-desc" class="text-muted small text-capitalize">--</div>
+                    </div>
+                    <div id="day3-col" class="col border-end p-4" style="cursor: pointer;">
+                        <div id="day3-name" class="text-info fw-bold small text-uppercase">--</div>
+                        <div id="day3-date" class="text-muted small mb-3">--</div>
+                        <div id="day3-icon" class="mb-2"></div>
+                        <div id="day3-temp" class="fs-2">--°C</div>
+                        <div id="day3-desc" class="text-muted small text-capitalize">--</div>
+                    </div>
+                    <div id="day4-col" class="col p-4" style="cursor: pointer;">
+                        <div id="day4-name" class="text-info fw-bold small text-uppercase">--</div>
+                        <div id="day4-date" class="text-muted small mb-3">--</div>
+                        <div id="day4-icon" class="mb-2"></div>
+                        <div id="day4-temp" class="fs-2">--°C</div>
+                        <div id="day4-desc" class="text-muted small text-capitalize">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 rounded-0 shadow-sm p-4">
+                <div class="border-bottom pb-2 mb-4">
+                    <h5 class="text-info fw-bold mb-0 small">HOURLY</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-borderless text-center align-middle mb-0">
+                        <thead>
+                            <tr id="forecast-row-time" class="fw-bold border-bottom">
+                                <td id="hourly-day-name" class="text-start text-uppercase text-dark">--</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="forecast-row-icon"><td></td></tr>
+                            <tr id="forecast-row-desc" class="small"><td class="text-start text-muted">Forecast</td></tr>
+                            <tr id="forecast-row-temp" class="fw-normal"><td class="text-start text-muted small">Temp (°C)</td></tr>
+                            <tr id="forecast-row-feels" class="small"><td class="text-start text-muted">RealFeel</td></tr>
+                            <tr id="forecast-row-wind" class="small"><td class="text-start text-muted">Wind (km/h)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="view-error" class="container-fluid px-4 mb-5 d-none">
+        <div class="card border-0 rounded-0 shadow-sm p-5 text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 400px;">
+            <div class="mb-4">
+                <img src="img/404-image.jfif" alt="404 Not Found" class="img-fluid" style="max-width: 250px;">
+            </div>
+            <h4 class="text-secondary fw-bold mb-2"><span id="error-city-name">Qwerty</span> could not be found.</h4>
+            <h5 class="text-secondary fw-normal">Please enter a different location.</h5>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

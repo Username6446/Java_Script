@@ -49,7 +49,6 @@ async function fetchWeather() {
     const url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&q=${city}&lang=${lang}&units=${units}`;
     const response = await fetch(url);
     const data = await response.json();
-
     const div = document.getElementById("weather");
     div.innerHTML = `
             <h1>Погода</h1>
