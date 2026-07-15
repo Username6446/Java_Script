@@ -9,7 +9,7 @@ body {
 .form-wrapper {
     background-color: #fdf5e6;
     padding: 20px 30px;
-    width: 250px;
+    width: 800px;
     border-radius: 4px;
 }
 
@@ -64,4 +64,34 @@ input[type="text"], input[type="password"] {
     color: blue;
     text-decoration: underline;
     font-size: 0.9em;
+}
+
+.registration-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px 25px; 
+}
+
+.button-group{
+    grid-column: span 2; 
+    margin-top: 10px;
+}
+
+.checkbox-skills label[for] {
+    font-weight: normal;
+}
+
+.checkbox-skills{
+    grid-column: span 2; 
+}
+
+td{
+    border: solid, 1px;
+    
+    padding: 8px 16px;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0px;
 }

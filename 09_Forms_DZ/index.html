@@ -1,41 +1,230 @@
 <!doctype html>
 <html lang="uk">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css">
-        <title>Login Form</title>
-    </head>
-    <body>
-        <div class="form-wrapper">
-            <form onsubmit="handleLogin(event)">
-                <div class="input-group">
-                    <label for="login">Your login:</label>
-                    <input id="login" name="login" type="text" required />
-                </div>
-                
-                <div class="input-group">
-                    <label for="password">Your password:</label>
-                    <input id="password" name="password" type="password" required />
-                </div>
-                
-                <div class="checkbox-group">
-                    <label for="rememberMe">Remember me</label>
-                    <input id="rememberMe" name="rememberMe" type="checkbox" />
-                </div>
-                
-                <div style="text-align: center; margin-top: 16px;">
-                    <input class="submit-btn" type="submit" value="Sign In">
-                </div>
-                
-                <div class="forgot-link">
-                    <a href="#">Forgot password?</a>
-                </div>
-            </form>
-        </div>
 
-        <div id="resultMessage" style="text-align: center; margin-top: 20px; font-size: 1.2em; font-weight: bold; color: #333;"></div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Login Form</title>
+</head>
 
-        <script src="script.js"></script>
-    </body>
+<body>
+    <h2>Ex1</h2>
+    <!-- ex1 -->
+    <div class="form-wrapper">
+        <form onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label for="login">Your login:</label>
+                <input id="login" name="login" type="text" required />
+            </div>
+
+            <div class="input-group">
+                <label for="password">Your password:</label>
+                <input id="password" name="password" type="password" required />
+            </div>
+
+            <div class="checkbox-group">
+                <label for="rememberMe">Remember me</label>
+                <input id="rememberMe" name="rememberMe" type="checkbox" />
+            </div>
+
+            <div style="text-align: center; margin-top: 16px;">
+                <input class="submit-btn" type="submit" value="Sign In">
+            </div>
+
+            <div class="forgot-link">
+                <a href="#">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+
+    <div id="resultMessage"
+        style="text-align: center; margin-top: 20px; font-size: 1.2em; font-weight: bold; color: #333;"></div>
+    <!-- ex2 -->
+    <h2>Ex2</h2>
+    <div class="form-wrapper">
+        <form onsubmit="handleMail(event)" class="registration-form">
+            <div class="input-group">
+                <label for="email">Your email:</label>
+                <input id="email" name="email" type="text" required />
+            </div>
+
+            <div class="input-group">
+                <label for="login-2">Your login:</label>
+                <input id="login-2" name="login-2" type="text" required />
+            </div>
+
+            <div class="input-group">
+                <label for="password-2">Your password:</label>
+                <input id="password-2" name="password-2" type="password" required />
+            </div>
+
+
+            <div class="input-group">
+                <label for="repeatPassword">Repeat password:</label>
+                <input id="repeatPassword" name="repeatPassword" type="password" required />
+            </div>
+
+            <div class="button-group" style="text-align: center; margin-top: 16px;">
+                <input class="submit-btn" type="submit" value="Sign In">
+            </div>
+        </form>
+    </div>
+    <div id="resultMessage2"
+        style="text-align: center; margin-top: 20px; font-size: 1.2em; font-weight: bold; color: #333;"></div>
+
+    <!-- ex3 -->
+    <h2>Ex3</h2>
+    <div class="form-wrapper">
+        <form onsubmit="handlePerson(event)" class="registration-form">
+            <div class="input-group">
+                <label for="firstname">Firstname:</label>
+                <input id="firstname" name="firstname" type="text" required />
+            </div>
+
+            <div class="input-group">
+                <label for="lastname">Lastname:</label>
+                <input id="lastname" name="lastname" type="text" required />
+            </div>
+
+            <div class="input-group">
+                <label for="birthday">Birthday:</label>
+                <input id="birthday" name="birthday" type="date" required />
+            </div>
+
+
+            <div class="input-group">
+                <label>Gender:</label>
+                <div>
+                    <input value="Male" id="male" name="gender" type="radio">
+                    <label for="male">Male</label>
+                    <input value="female" id="female" name="gender" type="radio">
+                    <label for="Female">Female</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Spain">Spain</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="city">City:</label>
+                <select id="city" name="city">
+                    <option value="Kyiv">Kyiv</option>
+                    <option value="Kharkiv">Kharkiv</option>
+                    <option value="Lviv">Lviv</option>
+                </select>
+            </div>
+
+            <div class="checkbox-skills">
+                <label>Skills:</label>
+
+                <input id="skill-HTML" name="skill-HTML" type="checkbox" />
+                <label class="skill-HTML" for="skill-HTML">HTML</label>
+
+                <input id="skill-CSS" name="skill-CSS" type="checkbox" />
+                <label class="skill-CSS" for="skill-CSS">CSS</label>
+
+                <input id="skill-JS" name="skill-JS" type="checkbox" />
+                <label class="skill-JS" for="skill-JS">JS</label>
+
+                <input id="skill-PHP" name="skill-PHP" type="checkbox" />
+                <label class="skill-PHP" for="skill-PHP">PHP</label>
+
+                <input id="skill-CPP" name="skill-CPP" type="checkbox" />
+                <label class="skill-CPP" for="skill-CPP">C++</label>
+
+                <input id="skill-Java" name="skill-Java" type="checkbox" />
+                <label class="skill-Java" for="skill-Java">JAVA</label>
+
+                <input id="skill-CSharp" name="skill-CSharp" type="checkbox" />
+                <label class="skill-CSharp" for="skill-CSharp">C#</label>
+
+            </div>
+
+            <div class="button-group" style="text-align: center; margin-top: 16px;">
+                <input class="submit-btn" type="submit" value="Save">
+            </div>
+        </form>
+    </div>
+    <table id="profile-table" style="display: none;">
+        <tbody>
+            <tr>
+                <td>Firstname</td>
+                <td data-key="firstname"></td>
+            </tr>
+            <tr>
+                <td>Lastname</td>
+                <td data-key="lastname"></td>
+            </tr>
+            <tr>
+                <td>Birthday</td>
+                <td data-key="birthday"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td data-key="gender"></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td data-key="country"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td data-key="city"></td>
+            </tr>
+            <tr>
+                <td>Skills</td>
+                <td data-key="skills"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- ex4 -->
+    <h2>Ex4</h2>
+    <div>
+        <form onsubmit="addColor(event)" style="width: 200px; margin: 0 auto 20px auto;" >
+            <div style="width: 200px; display: flex; flex-direction: row; margin-bottom: 10px;">
+                <div style="width: 33%">
+                    <label for="Red">R:</label>
+                    <input style="width: 50px;" id="Red" name="Red" type="text" required />
+                </div>
+                <div style="width: 33%">
+                    <label for="Green">G:</label>
+                    <input style="width: 50px;" id="Green" name="Green" type="text" required />
+                </div>
+                <div style="width: 33%">
+                    <label for="Blue">B:</label>
+                    <input style="width: 50px;" id="Blue" name="Blue" type="text" required />
+                </div>
+                
+            </div>
+            <button style="width: 100%">Add Button</button>
+            <div>
+
+            </div>
+        </form>
+    </div>
+    <div id="listOfColors" style="display: flex; flex-wrap: wrap; width: 70%; margin: 0 auto; justify-content: flex-start; gap: 50px; padding: 20px 0;">
+    
+    <div style="display: flex; align-items: center; width: 250px; height: 50px; border: 1px solid #999; box-sizing: border-box;">
+        <div style="width: 50px; height: 100%; background-color: rgb(86, 11, 11)"></div>
+        <p style="margin: 0; padding-left: 15px;">RGB (86,11,11)</p>
+    </div>
+    
+    <div style="display: flex; align-items: center; width: 250px; height: 50px; border: 1px solid #999; box-sizing: border-box;">
+        <div style="width: 50px; height: 100%; background-color: rgb(255, 11, 11)"></div>
+        <p style="margin: 0; padding-left: 15px;">RGB (255,11,11)</p>
+    </div>
+
+</div>
+    <script src="script.js"></script>
+</body>
+
 </html>
