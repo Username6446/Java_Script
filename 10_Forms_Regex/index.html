@@ -1,54 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+        <title>Regex forms - Два підходи</title>
+    </head>
+    <body>
+        <div class="container-fluid mt-4">
+            <h1 class="text-center mb-5">Порівняння валідації форм</h1>
+            
+            <div class="row">
+                <div class="col-md-6 px-4">
+                    <h3 class="text-center">Форма 1 (При вводі)</h3>
+                    <p class="text-center text-muted">Валідує одразу під час друкування тексту.</p>
+                    
+                    <form class="w-50 m-auto" onsubmit="loginSubmitForm1(event)">
+                        <div>
+                            <label for="email1" class="form-label mt-4">Електронна пошта</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="email1"
+                                name="email1"
+                                placeholder="example@mail.com"
+                                oninput="handleEmailInput1(event)"
+                            />
+                            <small id="email1Error" class="form-text text-danger"></small>
+                        </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <title>Regex forms</title>
-</head>
+                        <div>
+                            <label for="password1" class="form-label mt-4">Пароль</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="password1"
+                                name="password1"
+                                oninput="handlePasswordInput1(event)"
+                            />
+                            <small id="password1Error" class="form-text text-danger"></small>
+                        </div>
 
-<body>
-    <h1 class="text-center mt-4">Валідація форм</h1>
-        <form class="w-25 m-auto" onsubmit="loginSubmit(event)">
-            <div>
-                <label for="email" class="form-label mt-4"
-                    >Електронна пошта</label
-                >
-                <input
-                    type="text"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="example@mail.com"
-                    oninput="handleEmailInput(event)"
-                />
-                <small id="emailError" class="form-text text-danger"></small>
+                        <div>
+                            <input id="btnSubmit1" type="submit" value="Увійти" class="btn btn-secondary w-100 mt-4">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-6 px-4 border-start">
+                    <h3 class="text-center">Форма 2 (При відправці)</h3>
+                    <p class="text-center text-muted">Валідує лише після натискання кнопки.</p>
+
+                    <form class="w-50 m-auto" onsubmit="loginSubmitForm2(event)">
+                        <div>
+                            <label for="email2" class="form-label mt-4">Електронна пошта</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="email2"
+                                name="email2"
+                                placeholder="example@mail.com"
+                            />
+                            <small id="email2Error" class="form-text text-danger"></small>
+                        </div>
+
+                        <div>
+                            <label for="password2" class="form-label mt-4">Пароль</label>
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="password2"
+                                name="password2"
+                            />
+                            <small id="password2Error" class="form-text text-danger"></small>
+                        </div>
+
+                        <div>
+                            <input type="submit" value="Увійти" class="btn btn-secondary w-100 mt-4">
+                        </div>
+                    </form>
+                </div>
             </div>
+        </div>
 
-            <div>
-                <label for="password" class="form-label mt-4"
-                    >Пароль</label
-                >
-                <input
-                    type="password"
-                    class="form-control"
-                    id="password"
-                    name="password"
-                    oninput="handlePasswordInput(event)"
-                />
-                <small id="passwordError" class="form-text text-danger"></small>
-            </div>
-
-            <div>
-                <input id="btnSubmit" type="submit" value="Увійти" class="btn btn-secondary w-100 mt-4">
-            </div>
-        </form>
-
-    </nav>
-    <script src="script.js"></script>
-    <script src="bootstrap/bootstrap.bundle.min.js"></script>
-</body>
-
+        <script src="script.js"></script>
+        <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    </body>
 </html>

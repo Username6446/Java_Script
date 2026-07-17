@@ -1,31 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <title>Document</title>
+    <title>GitHub User Search</title>
 </head>
 
 <body>
-    <h1>HTTP Requests & Responses using Fetch()</h1>
-    <p>Fetch API is a modern interface that allows you to make HTTP requests to servers from web browsers. It provides a
-        more powerful and flexible way to handle network requests compared to the older XMLHttpRequest (XHR) method.
-        Fetch() returns a Promise that resolves to the Response object representing the response to the request.</p>
-    <h3>User Avatar</h3>
+    <div class="container mt-5">
+        <h1>HTTP Requests & Responses using Fetch()</h1>
+        <div class="card p-4 shadow-sm mt-4">
+            <input type="text" class="form-control mb-4 w-50 border-0 border-bottom rounded-0" id="searchInput"
+                placeholder="Search login">
 
-    <hr>
-    <hr>
-    
-    <hr>
-    <hr>
-    <div>
-        <input type="email" class="form-control" id="nameProductInput" aria-describedby="emailHelp"
-            placeholder="Search Login">
+            <div id="userInfo" style="display: none;" class="row mt-3">
+
+                <div class="col-md-4">
+                    <img id="avatar" src="" alt="User Avatar" class="img-fluid mb-4 w-100" style="max-width: 150px;">
+
+                    <div class="d-flex justify-content-between border-bottom pb-2 mb-3">
+                        <span class="text-secondary fw-bold">Name:</span>
+                        <span id="name">No Name</span>
+                    </div>
+                    <div class="d-flex justify-content-between border-bottom pb-2">
+                        <span class="text-secondary fw-bold">Login:</span>
+                        <span id="login">No Login</span>
+                    </div>
+                </div>
+
+                <div class="col-md-8 px-md-5">
+                    <div class="d-flex justify-content-between border-bottom pb-2 mb-4">
+                        <span class="text-secondary fw-bold">Url to github:</span>
+                        <a href="#" id="url" target="_blank">No URL</a>
+                    </div>
+                    <div class="d-flex justify-content-between border-bottom pb-2 mb-4">
+                        <span class="text-secondary fw-bold">Blog:</span>
+                        <a href="#" id="blog" target="_blank">No Blog</a>
+                    </div>
+                    <div class="d-flex justify-content-between border-bottom pb-2 mb-4">
+                        <span class="text-secondary fw-bold">City:</span>
+                        <span id="city">No City</span>
+                    </div>
+                    <div class="d-flex justify-content-between border-bottom pb-2 mb-4">
+                        <span class="text-secondary fw-bold">Email:</span>
+                        <span id="email">No Email</span>
+                    </div>
+                    <div class="d-flex justify-content-between border-bottom pb-2 mb-4">
+                        <div>
+                            <span class="text-secondary fw-bold">Followers:</span>
+                            <span id="followers">0</span>
+                        </div>
+                        <div>
+                            <span class="text-secondary fw-bold">Following:</span>
+                            <span id="following">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="errorMsg" class="alert alert-danger" style="display: none;">User not found</div>
+        </div>
     </div>
 
-    <img id="avatar" src="" alt="User Avatar" width="200">
     <script src="base.js"></script>
 </body>
 
